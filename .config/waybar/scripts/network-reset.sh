@@ -1,0 +1,3 @@
+#! /usr/bin/bash 
+nmcli network off
+nmcli network on

@@ -1,0 +1,307 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top", // Waybar at top layer
+    "position": "left", // Waybar position (top|bottom|left|right)
+    //"height": 30, // Waybar height (to be removed for auto height)
+    "width": 40, // Waybar width
+    "spacing": 3, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "fixed-center": true,
+    "reload-style-on-change": true,
+    "margin-top": 20,
+    "margin-bottom": 20,
+    "margin-left": 10,
+    
+    "modules-left": [
+        "custom/os-icon",
+        "clock",
+        "clock#date"
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+        "tray"
+    ],
+    "modules-right": [
+
+        "group/audio",
+        "group/statistics",
+        "group/internet",
+        "battery",
+        "group/settings-menu",
+        "group/power-options"
+    ],
+    "custom/os-icon":{
+        "exec": "~/.config/waybar/scripts/os-icon.sh", // world's most boo boo baby script
+        "interval": "once",
+        "tooltip": false,
+        "format": "{}",
+        "on-click": "kitty -e fastfetch"
+        
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%I\n%M\n%S\n%p}",
+        "timezone": "America/New_York",
+        "tooltip": false
+    },
+    "clock#date": {
+        "interval": 1,
+        "format": "{:%A, %B %d, %Y}",
+        "timezone": "America/New_York",
+        "rotate": 90,
+        "tooltip": true,
+        "tooltip-format": "Click to open calcurse",
+        "on-click": "kitty -e calcurse"
+    },
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        },
+        "warp-on-scroll": false,
+        "format": "{icon}",
+        "format-icons": {
+            "empty": "",
+            "urgent": "",
+            "active": "" ,
+            "default": ""
+        }
+    },
+        "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+        "icons": {
+        "discord": "",
+        "firefox": "󰈹",
+        "terminal": "󰞷",
+        "vscodium": "",
+        "minecraft": "󰍳",
+        "prism_launcher": "󰍳"
+        }
+    },
+    "group/audio": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 200,
+        "children-class": "audio",
+        "transition-left-to-right": false
+    },
+        "modules": [
+            "pulseaudio",
+            "pulseaudio/slider"
+        ]
+        },
+        "pulseaudio": {
+        "scroll-step": 1, // %, can be a float
+        "format": "{icon}",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+        "max-volume": 100,
+        "tooltip": "true",
+        "tooltip-format": "Volume"
+        
+        },
+        "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+    "orientation": "vertical"
+    },
+    "group/statistics": {
+    "orientation": "vertical",
+        "format": "{icon}",
+        "format-icons": "",
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/task-manager",
+            "temperature",
+            "memory",
+            "cpu"
+        ]
+    },
+        "cpu": {
+        "interval": 1,
+        "format": "{icon}",
+        "format-icons": "",
+        "tooltip": true,
+        "tooltip-format": "{string}%"
+        },
+        "temperature": {
+        "interval": 1,
+        "format": "",
+        "format-icons": ["", "", ""],
+        "tooltip": "true",
+        "tooltip-format": "CPU temperature: {temperatureC}°C"
+        },
+        "memory": {
+        "interval": 1,
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Current RAM usage: {used:0.1f}%"
+        },
+        "custom/task-manager":{
+        "format": "{icon}",
+        "format-icons": "",
+        "tooltip": true,
+        "tooltip-format": "Click to open Btop",
+        "on-click": "kitty -e btop"
+    },
+    "group/internet": {
+        "orientation": "vertical",
+        "format": "{icon}",
+        "format-icons": "",
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": false
+        },
+            "modules": [
+            "network",
+            "custom/network-reset"    
+            ]
+    },
+        "network": {
+        "interval": 1,
+        "format-wifi": "",
+            "format-icons": ["󰢿","󰢼","󰢽","󰢾"],
+        "format-ethernet": "󰌗",
+        "tooltip-format-ethernet": "{bandwidthUpBits} | {bandwidthDownBits}: {ifname}",
+        "tooltip-format-wifi": "{icon} {bandwidthUpBits} | {bandwidthDownBits}: {ifname}",
+        "tooltip-format-disconnected": "Not connected to internet",
+        "format-disconnected": "⚠",
+        "on-click": "kitty -e nmtui"
+        },
+        "custom/network-reset": {
+        "format": "{icon}",
+        "format-icons": "",
+        "tooltip": true,
+        "tooltip-format": "Restart network",
+        "on-click": "~/.config/waybar/scripts/network-reset.sh"
+        },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "group/settings-menu": {
+        "orientation": "vertical",
+        "format": "{icon}",
+        "format-icons": "",
+        "drawer": {
+            "transition-duration": 200,
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/settings",
+            "custom/theme",
+            "custom/wallpaper",
+            "custom/displays",
+            "custom/hyprland_config"
+        ]
+    },
+        "custom/settings":{
+            "format": "{icon}",
+            "format-icons": "",
+            "on-click": "kitty",
+            "tooltip": true,
+            "tooltip-format": "Settings"
+        },
+        "custom/theme":{ // doesnt work yet
+            "format": "{icon}",
+            "format-icons": "󰏘",
+            "on-click": "kitty -e wal --preview",
+            "tooltip": true,
+            "tooltip-format": "Change theme"
+        },
+        "custom/wallpaper":{
+            "format": "{icon}",
+            "format-icons": "󰸉",
+            "on-click": "wallpypr-config",
+            "tooltip": true,
+            "tooltip-format": "Change wallpaper"
+        },
+        "custom/displays":{
+            "format": "{icon}",
+            "format-icons": "󰍹",
+            "on-click": "nwg-displays",
+            "tooltip": true,
+            "tooltip-format": "Configure displays"
+        },
+        "custom/hyprland_config":{
+            "format": "{icon}",
+            "format-icons": "",
+            "on-click": "thunar ~/.config/hypr",
+            "tooltip": true,
+            "tooltip-format": "Configure Hyprland"
+        },
+    "group/power-options": {
+        "orientation": "vertical",
+        "format": "{icon}",
+        "format-icons": "⏻",
+        "drawer":{
+        "transition-duration": 200,
+        "transition-left-to-right": false
+                },
+        "modules": [
+            "custom/shutdown",
+            "idle_inhibitor",
+            "custom/logout",
+            "custom/sleep",
+            "custom/reboot"
+
+            ]
+        },
+            "idle_inhibitor": {
+                "format": "{icon}",
+                "tooltip": true,
+                "tooltip-format-activated": "Currently preventing sleep",
+                "tooltip-format-deactivated": "Force computer to stay awake",
+                "format-icons": {
+                    "activated": "󰅶",
+                    "deactivated": "󰛊"
+                                }
+            },
+            "custom/logout": {
+                "format": "{icon}",
+                "format-icons": "󰍃",
+                "on-click": "loginctl kill-user $(whoami)" ,
+                "tooltip": true,
+                "tooltip-format": "Log out"
+            },
+            "custom/sleep": {
+                "format": "{icon}",
+                "format-icons": "󰤄",
+                "on-click": "systemctl suspend",
+                "tooltip": true,
+                "tooltip-format": "Suspend"
+            },
+            "custom/reboot": {
+                "format": "{icon}",
+                "format-icons": "",
+                "tooltip": true,
+                "tooltip-format": "Restart",
+                "on-click": "shutdown --reboot now"
+            },
+            "custom/shutdown": {
+                "format": "{icon}",
+                "format-icons": "⏻",
+                "tooltip": true,
+                "tooltip-format": "Shut down",
+                "on-click": "shutdown -h now"
+            }
+    }
+
+

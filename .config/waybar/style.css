@@ -1,0 +1,388 @@
+@import url('../../.cache/wal/colors-waybar.css');
+
+
+* {
+/* `otf-font-awesome` is required to be installed for icons */
+font-family: JetBrainsMono Nerd Font Propo, FontAwesome;
+font-size: 14px;
+}
+window#waybar {
+background-color: @background;
+border-radius: 40px;
+border-width: 5px;
+border-color: transparent;
+border-style: solid;
+
+}
+
+tooltip {
+background-color: transparent;
+border: none;
+}
+    tooltip label {
+background-color: @color0;
+color: @color15;
+border-radius: 0px;
+border: solid 0px @color15;
+font-variant: small-caps;
+font-size: 16px;
+margin: 1px;
+    }
+
+#custom-os-icon {
+background-color: @color9;
+color: @background;
+font-size: 20px;
+border-width: 3px;
+border-color: @foreground;
+border-style: double;
+border-radius: 25px;
+padding: 1px;
+margin: 3px;
+}
+
+#clock {
+color: @color0;
+background-color: @foreground;
+font-size: 18px;
+font-weight: 500;
+font-stretch: ultra-condensed;
+letter-spacing: 0px;
+margin: 3px;
+border-width: 3px;
+border-color: @background;
+border-style: double;
+}
+#clock.date {
+font-size: 16px;
+font-weight: 400;
+font-variant: small-caps;
+letter-spacing: 0px;
+border-color: transparent;
+color: @foreground;
+background-color: @background;
+
+}
+
+#workspaces {
+    margin: 7px;
+    border-radius: 15px;
+    background-color: @color0;
+}
+    #workspaces button { /* workspaces that have something in them*/
+    all: unset;
+    margin: 2px;
+    padding: 1px;
+    border-radius: 15px;
+    background-color: @color8;
+    color: @color14;
+    }
+    #workspaces button:hover {
+    color: @color15;
+    background-color: @color4;
+    }
+    #workspaces button.empty { /* workspaces that are empty */
+    color: @color7;
+    background-color: @color0;
+    }
+    #workspaces button.empty:hover {
+    color: @color12;
+    background-color: @color8;
+    }
+    #workspaces button.active { /* workspace that im on */
+    background-color: @color10;
+    color: @color15;
+    }
+    #workspaces button.urgent {
+    color: @background;
+    background-color: @color9;
+    }
+
+#audio {
+color: @background;
+background-color: @color3;
+padding: 4px;
+margin: 3px;
+border-radius: 30px;
+border-width: 3px;
+border-color: @background;
+border-style: double;
+}
+    #pulseaudio {
+    color: @background;
+    background-color: @color3;
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #pulseaudio.muted {
+    color: @background;
+    background-color: @color5;
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #pulseaudio:hover {
+    background-color: @color11;
+    color: @foreground;
+    }
+    #pulseaudio-slider {
+    padding: 0;
+    margin: 0;
+    }
+    #pulseaudio-slider slider {
+    min-height: 10px;
+    min-width: 10px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    }
+    #pulseaudio-slider trough {
+    min-height: 100px;
+    min-width: 10px;
+    border-radius: 10px;
+    background-color: @background;
+    }   
+    #pulseaudio-slider highlight {
+    min-width: 10px;
+    border-radius: 5px;
+    background-color: @color1;
+    }
+
+#statistics{
+color: @background;
+background-color: @color2;
+padding: 4px;
+margin: 3px;
+border-radius: 30px;
+border-width: 3px;
+border-color: @background;
+border-style: double;
+}
+    #statisics:hover {
+    color: @color15;
+    background-color: @color10;
+    }
+    #cpu {
+    color: @background;
+    padding: 1px;
+    border-radius: 15px;
+    } 
+    #cpu:hover {
+    color: @color15;
+    background-color: @color10;
+    }     
+    #memory {
+    color: @background;
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #memory:hover {
+    color: @color15;
+    background-color: @color10;
+    }
+    #custom-task-manager {
+    color: @background;
+    background-color: @color2;
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #custom-task-manager:hover {
+    color: @color15;
+    background-color: @color10;
+    }
+    #temperature {
+    color: @background;
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #temperature:hover {
+    color: @color15;
+    background-color: @color10;
+    }
+    #temperature.critical {
+    color: @color15;
+    background-color:@color9;
+    }
+
+#battery {
+color: @color15;
+background-color:@toolbar-module-bg;
+border-radius: 15px;
+}
+#battery.charging, #battery.plugged {
+color: @color2;
+background-color: @color8;
+border-radius: 15px;
+}
+@keyframes blink {
+    to {
+        color: @color10;
+        background-color:@toolbar-module-bg;
+    }
+}
+#battery.critical:not(.charging) {
+background-color: @toolbar-module-bg;
+color: @color15;
+animation-name: blink;
+animation-duration: 0.5s;
+animation-timing-function: steps(12);
+animation-iteration-count: infinite;
+animation-direction: alternate;
+}
+
+#internet {
+color: @background;
+background-color: @color4;
+padding: 4px;
+margin: 3px;
+border-radius: 30px;
+border-width: 3px;
+border-color: @background;
+border-style: double;
+}
+    #network {
+    color: @background;
+    background-color: @color4;
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #network:hover { 
+    color: @color15;
+    background-color: @color12;
+    }
+    #custom-network-reset {
+    color: @background;
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #custom-network-reset:hover {
+    color: @color15;
+    background-color: @color12;
+    }
+    #network.disconnected {
+    color: @foreground;
+    background-color: @color9;
+    padding: 1px;
+    border-radius: 15px;
+    }
+
+
+#settings-menu {
+color: @background;
+background-color:@color5;
+padding: 4px;
+margin: 3px;
+border-radius: 30px;
+border-width: 3px;
+border-color: @background;
+border-style: double;
+}
+    #custom-settings {
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #custom-settings:hover{
+    color: @foreground;
+    background-color: @color13;
+    }
+    #custom-theme {
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #custom-theme:hover {
+    color: @foreground;
+    background-color:@color13;
+    } 
+    #custom-wallpaper{
+    padding: 1px;
+    border-radius: 15px;
+    }  
+    #custom-wallpaper:hover {
+    color: @foreground;
+    background-color:@color13;
+    }
+    #custom-displays {
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #custom-displays:hover {
+    color: @foreground;
+    background-color:@color13;
+    }
+    #custom-hyprland_config {
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #custom-hyprland_config:hover {
+    color: @foreground;
+    background-color:@color13;
+    }
+
+
+#power-options {
+color: @foreground;
+background-color:@background;
+padding: 4px;
+margin: 3px;
+border-radius: 30px;
+border-width: 3px;
+border-color: @foreground;
+border-style: double;
+}
+    #idle_inhibitor {
+    color: @foreground;
+    background-color:@background;
+    padding: 1px;
+    border-radius: 15px;
+    } 
+    #idle_inhibitor:hover {
+    color: @background;
+    background-color:@foreground;
+    }  
+    #idle_inhibitor.activated {
+    color: @background;
+    background-color: @color6;
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #idle_inhibitor.activated:hover {
+    color: @background;
+    background-color: @color14;
+    }
+    #custom-reboot {
+    color: @foreground;
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #custom-reboot:hover {
+    color: @background;
+    background-color: @foreground;
+    }
+    #custom-sleep {
+    color: @foreground;
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #custom-sleep:hover {
+    color: @background;
+    background-color: @foreground;
+    }
+    #custom-logout {
+    color: @foreground;
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #custom-logout:hover {
+    color: @background;
+    background-color: @foreground;
+
+    }
+    #custom-shutdown {
+    color: @foreground;
+    padding: 1px;
+    border-radius: 15px;
+    }
+    #custom-shutdown:hover {
+    color: @background;
+    background-color: @foreground;
+    }
