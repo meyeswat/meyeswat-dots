@@ -1,9 +1,22 @@
 #! /usr/bin/bash
+# Function to display the confirmation prompt
+function confirm() {
+    while true; do
+        read -p "Shut down system now? ([Y]es/[N]o/[C]ancel) " yn
+        case $yn in
+            [Yy]* ) shutdown -h now;;
+            [Nn]* ) return 1;;
+            [Cc]* ) exit;;
+            * ) echo "Please answer YES, NO, or CANCEL.";;
+        esac
+    done
+}
 
-read -p "Do you want to shut down? [Y / N]" -n 1 -r
-echo    # (optional) move to a new line
-case $choice in
-[yY]* ) echo "shutdown -h now" ;;
-[nN]* ) exit ;;
-*) exit ;;
-esac
+# Example usage of the confirm function
+if confirm; then
+    echo "Shutting down..."
+    # Place your code here to execute when user confirms
+else
+    echo "Shutdown aborted."
+    # Place your code here to execute when user denies
+fi
