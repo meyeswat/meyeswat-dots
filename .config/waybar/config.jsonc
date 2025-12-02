@@ -276,7 +276,7 @@
             "custom/sleep": {
                 "format": "{icon}",
                 "format-icons": "󰤄",
-                "on-click": "systemctl hibernate",
+                "on-click": "systemctl suspend",
                 "tooltip": true,
                 "tooltip-format": "Suspend"
             },
