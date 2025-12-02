@@ -35,7 +35,7 @@
         "interval": "once",
         "tooltip": false,
         "format": "{}",
-        "on-click": "kitty -e fastfetch"
+        "on-click": "kitty -e"
         
     },
     "clock": {
@@ -219,17 +219,10 @@
             "tooltip": true,
             "tooltip-format": "Settings"
         },
-        "custom/theme":{ // doesnt work yet
-            "format": "{icon}",
-            "format-icons": "󰏘",
-            "on-click": "kitty -e wal --preview",
-            "tooltip": true,
-            "tooltip-format": "Change theme"
-        },
         "custom/wallpaper":{
             "format": "{icon}",
             "format-icons": "󰸉",
-            "on-click": "wallpypr-config",
+            "on-click": "waypaper",
             "tooltip": true,
             "tooltip-format": "Change wallpaper"
         },
