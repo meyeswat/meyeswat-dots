@@ -7,28 +7,42 @@
 */
 
 * {{
-    /* font-family: "JetBrains Mono"; */
+    font-family: "JetBrains Nerd Font Mono";
     /* font-style: italic; */
 
     /* *.background */
-    --background-primary: {background};
-    --background-secondary: {background};
-    --background-tertiary: {background};
+    --background-primary: #ffffff;
+    --background-secondary: #0000ff;
 
-    --background-primary-alt: {background};
-    --background-secondary-alt: {background};
-    --background-tertiary-alt: {background};
+    --background-primary-alt: #ffff00;
+    --background-secondary-alt: {color0};
+    --background-tertiary-alt: #0000ff;
 
-    --channeltextarea-background: {background};
-    --custom-channel-members-bg: {background};
+    --channeltextarea-background: #ffffff;
+    --custom-channel-members-bg: {background}; /* channel members bg */ 
 
-    --profile-gradient-primary-color: {background};
-    --profile-gradient-secondary-color: {background};
+    --profile-gradient-primary-color: #ffff00;
 
-    --__header-bar-background: {background} !important;
+    --__header-bar-background: {color8} !important; /* channel name bg */
+    --header-secondary: #e6e6e6;
+    --guild-header-text-shadow: 0 1px 1px rgba(230, 230, 230, 0.04);
+
+    --background-mobile-primary: #Ff0000;
+    --background-mobile-secondary: #00ff00;
+    --control-brand-foreground: #0000ff;
+    --control-brand-foreground-new: #ffff00;
+    --background-mentioned: {color0}; /*mentioned text background */
+    --background-mentioned-hover: =#00ffff;
+
+    --info-warning-foreground: #e6e6e6;
+    --info-positive-background: #4cd9a4;
+    --info-positive-foreground: #e6e6e6;
+    --info-warning-background: #faa483;
+    --info-danger-background: #fb7c7c;
+    --info-danger-foreground: #e6e6e6;
 
     /* -- themes update -- */
-    --bg-base-tertiary: {background};
+    --bg-base-tertiary: #0000ff;
 
     /* slightly darker background - useful for separating */
     --card-primary-bg: color-mix(in srgb, {background}, black 20%);
@@ -57,59 +71,114 @@
     --button-secondary-background-active: color-mix(in srgb, {background}, black 60%);
 
     /* primary.* */
-    --primary-630: {background};
+    --primary-630: {color4}; /*hide members indicator */
 
     /* *.color2 - secondary elements */
-    --scrollbar-auto-thumb: {color7};
-    --scrollbar-thin-thumb: {color7};
+    --scrollbar-auto-thumb: {color7}; /* scroll bar in channel */
+    --scrollbar-thin-thumb: {color15};
+    --scrollbar-auto-scrollbar-color-thumb: #ffffff;
+    --scrollbar-auto-scrollbar-color-track: transparent; /* srcoll bar in channel listing */
     --interactive-muted: {color8}; /* nitro icon color */
-    --text-muted: {color7};
+    --text-muted: {color8}; /* date and time stamps*/
     --background-modifier-hover: {color4}; /* channel select hover */
     --background-modifier-active: {color14}; /* channel select click flash color */
-    --background-modifier-accent: {color7}; 
+    --background-modifier-accent: #ff0000; 
     --background-accent: {color9}; /* share screen in another server icon/important widgets */
 
     /* -- themes update -- */
-    --input-border: {color7};
-    --border-normal: {color7};
-    --icon-secondary: {color7};
-    --icon-tertiary: {color7};
-    --channel-icon: {color7};
-    --channels-default: {color7};
-    --header-primary: {color7};
-    --__lottieIconColor: {color7};
+    --input-border: {color7}; /* search bar border */
+    --border-normal: {color7}; /* voice channel quota counter outline, of all things*/
+    --icon-secondary: {color15}; /* text channel pound sign color for UNREAD channels */
+    --icon-tertiary: {background}; /*icons within channel header */
+    --channel-icon: {color8}; /* text channel pound sign color for READ channels */
+    --channels-default: {color7}; /* channel names in sidebar */
+    --header-primary: {foreground}; /* channel header and server names */
+    --__lottieIconColor: {foreground}; /* mute/deafen/settings icons */
     --interactive-normal: {color8}; /* important background widgets like adding media to message */
 
     /* *.color3 */
     --red-400: {color1};
-    --background-modifier-selected: {color12};/* channel selected color */
+    --background-modifier-selected: {color12};/* selected channel color */
 
     /* -- themes update -- */
-    --notice-background-positive: color-mix(in srgb, {color1}, black 75%);
-    --notice-text-positive: {color1};
+    --notice-background-positive: #00ff00;
+    --notice-text-positive: #ff00ff;
 
     /* *.color4 - main theme color: flashy, important elements */
-    --status-danger: {color1};
-    --button-outline-danger-border: {color1};
-    --button-outline-danger-text: {color1};
+    --status-danger: {color9}; /* notification red */
+    --button-outline-danger-border: {color9};
+    --button-outline-danger-text: #00ffff;
     --button-danger-background: {color1};
 
     --yellow-300: {color3};
 
     /* *.color5 - light theme color */
-    --brand-experiment: {color3};
-    --brand-experiment-360: {color3};
-    --brand-experiment-500: {color3};
-    --profile-gradient-button-color: {color3};
+    --brand-experiment: #000000;
+    --brand-experiment-360: #00ff00;
+    --brand-experiment-500: #ff0fff;
+    --profile-gradient-button-color: #00f0f0;
 
-    --green-360: {color10};
+    --green-360: {color2};
+
 
     /* *.color6 - lighter theme color */
     /* -!- currently unused -!- */
 
     /* *.color7 - very light, text and foreground */
     --text-normal: {color15};
-    --interactive-active: {color15}; /* unread channels */
+    --text-link: {color12};
+    --text-link-low-saturation: {color4};
+    --text-warning: {color9};
+    --text-danger: {color9}; /* important red text */
+    --text-brand: {foreground}; /*  selected menu header text */
+    --text-alt: #0000ff;
+    --message-text-color: #ff0000;
+
+    --interactive-active: {foreground};
+    --interactive-hover: {color15};
+
+    --status-warning-text: #faa483;
+    --status-positive-background: #4cd9a4;
+    --status-positive-text: #e6e6e6;
+    --status-warning-background: #faa483;
+    --status-danger-background: #fb7c7c;
+    --status-danger-text: #e6e6e6;
+    --status-green-600: {color2};
+
+    --info-positive-text: #e6e6e6;
+    --info-warning-text: #e6e6e6;
+    --info-danger-text: #e6e6e6;
+    --info-help-background: #202020;
+    --info-help-foreground: #e6e6e6;
+    --info-help-text: #ffffff;
+
+    /* unread channels */
+
+
+
+    --dark-border: 1px solid rgba(255, 255, 255, 0.06);
+    --elevation-stroke: 0 0 0 1px rgba(230, 230, 230, 0.06);
+    --box-shadow: rgba(0, 0, 0, 0.25) 0px 3px 4px 2px;
+    --elevation-low: rgba(230, 230, 230, 0.05);
+    --elevation-medium: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+    --elevation-high: rgba(0, 0, 0, 0.25) 0px 12px 14px, rgba(0, 0, 0, 0.12) 0px -7px 7px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 5px 3px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    --logo-primary: #ffffff;
+    --activity-card-background: #1b1b1b;
+    --textbox-markdown-syntax: #909090;
+    --deprecated-card-bg: #1b1b1b;
+    --deprecated-card-editable-bg: #151515;
+    --deprecated-store-bg: #1b1b1b;
+    --deprecated-quickswitcher-input-background: #313131;
+    --background-spacing: #222222;
+    --deprecated-text-input-bg: #1b1b1b;
+    --deprecated-text-input-border: #d1d1d1;
+    --deprecated-text-input-border-hover: #191919;
+    --deprecated-text-input-border-disabled: #1b1b1b;
+    --deprecated-text-input-prefix: #909090;
+    --focus-primary: rgba(230, 230, 230, 0.1);
+
+
+
 }}
 
 /* status indicators */
@@ -124,3 +193,4 @@ rect[fill="#cc954c"] {{
 rect[fill="#40a258"] {{
     fill: {color2} !important;
 }}
+
