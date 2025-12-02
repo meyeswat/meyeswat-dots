@@ -206,7 +206,6 @@
         },
         "modules": [
             "custom/settings",
-            "custom/theme",
             "custom/wallpaper",
             "custom/displays",
             "custom/hyprland_config"
