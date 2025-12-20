@@ -207,6 +207,7 @@
         "modules": [
             "custom/settings",
             "custom/wallpaper",
+            "custom/theme",
             "custom/displays",
             "custom/hyprland_config"
         ]
@@ -224,6 +225,13 @@
             "on-click": "waypaper",
             "tooltip": true,
             "tooltip-format": "Change wallpaper"
+        },
+         "custom/theme":{
+            "format": "{icon}",
+            "format-icons": "",
+            "on-click": "kitty -e ~/.config/waybar/scripts/theme-directions.sh",
+            "tooltip": true,
+            "tooltip-format": "Change theme"
         },
         "custom/displays":{
             "format": "{icon}",
