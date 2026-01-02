@@ -15,4 +15,4 @@ sudo cp -R /usr/share/themes/adw-gtk3/index.theme /usr/share/themes/wal
 sudo rm -rf /usr/share/themes/wal/gtk-3.0/gtk.css
 ln -s ~/.cache/wal/colors-gtk.css /usr/share/themes/wal/gtk-3.0/
 sudo mkdir ~/.waterfox/native-messaging-hosts/
-sudo ln -s /usr/lib/mozilla/native-messaging-hosts/pywalfox.json/ ~/.waterfox/native-messaging-hosts/
+sudo ln -s ~/.mozilla/native-messaging-hosts/pywalfox.json/ ~/.waterfox/native-messaging-hosts/
