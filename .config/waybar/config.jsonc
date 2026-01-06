@@ -35,7 +35,7 @@
         "interval": "once",
         "tooltip": false,
         "format": "{}",
-        "on-click": "kitty -e"
+        "on-click": "kitty -e ~/.config/waybar/scripts/fastfetch.sh"
         
     },
     "clock": {
@@ -186,14 +186,14 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
+       "interval": 1,
+        "format": "{icon}",
+        "format-full": "󰁹",
+        "format-charging": "󱐋",
+        "format-plugged": "",
+        "format-alt": "{capacity}%",
         // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]
     },
 
     "group/settings-menu": {
