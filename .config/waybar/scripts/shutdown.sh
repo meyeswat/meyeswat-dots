@@ -4,7 +4,7 @@ function confirm() {
     while true; do
         read -p "Shut down system now? ([Y]es/[N]o/[C]ancel) " yn
         case $yn in
-            [Yy]* ) shutdown -h now;;
+            [Yy]* ) uhubctl -a -off -p 3 | sleep 5 | shutdown -h now;;
             [Nn]* ) return 1;;
             [Cc]* ) exit;;
             * ) echo "Please answer YES, NO, or CANCEL.";;
