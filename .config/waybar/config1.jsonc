@@ -3,28 +3,31 @@
     "layer": "top", // Waybar at top layer
     "position": "left", // Waybar position (top|bottom|left|right)
     //"height": 30, // Waybar height (to be removed for auto height)
-    "width": 45, // Waybar width
-    "spacing": 0, // Gaps between modules (4px)
+    "width": 40, // Waybar width
+    "spacing": 3, // Gaps between modules (4px)
     // Choose the order of the modules
-    "fixed-center": false,
+    "fixed-center": true,
     "reload-style-on-change": true,
-    "margin-top": 10,
-    "margin-bottom": 10,
-    "margin-left": 5,
-    
+    "margin-top": 20,
+    "margin-bottom": 20,
+    "margin-left": 10,
+
     "modules-left": [
         "custom/os-icon",
         "clock",
-        "clock#date",
-         "hyprland/workspaces"
-],
+        "clock#date"
+    ],
+    "modules-center": [
+        "hyprland/workspaces",
+        "tray"
+    ],
     "modules-right": [
 
         "group/audio",
         "group/statistics",
         "group/internet",
-        "group/settings-menu",
         "battery",
+        "group/settings-menu",
         "group/power-options"
     ],
     "custom/os-icon":{
@@ -33,7 +36,7 @@
         "tooltip": false,
         "format": "{}",
         "on-click": "kitty -e ~/.config/waybar/scripts/fastfetch.sh"
-        
+
     },
     "clock": {
         "interval": 1,
@@ -43,7 +46,7 @@
     },
     "clock#date": {
         "interval": 1,
-        "format": "{:%B %d}",
+        "format": "{:%A, %B %d, %Y}",
         "timezone": "America/New_York",
         "rotate": 90,
         "tooltip": true,
@@ -63,7 +66,18 @@
             "active": "" ,
             "default": ""
         }
-
+    },
+        "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+        "icons": {
+        "discord": "",
+        "firefox": "󰈹",
+        "terminal": "󰞷",
+        "vscodium": "",
+        "minecraft": "󰍳",
+        "prism_launcher": "󰍳"
+        }
     },
     "group/audio": {
     "orientation": "inherit",
@@ -86,7 +100,7 @@
         "max-volume": 100,
         "tooltip": "true",
         "tooltip-format": "Volume"
-        
+
         },
         "pulseaudio/slider": {
         "min": 0,
@@ -145,7 +159,7 @@
         },
             "modules": [
             "network",
-            "custom/network-reset"    
+            "custom/network-reset"
             ]
     },
         "network": {
@@ -172,7 +186,7 @@
             "warning": 30,
             "critical": 15
         },
-        "interval": 1,
+       "interval": 1,
         "format": "{icon}",
         "format-full": "󰁹",
         "format-charging": "󱐋",
@@ -289,5 +303,3 @@
                 "on-click": "kitty -e ~/.config/waybar/scripts/shutdown.sh"
             }
     }
-
-

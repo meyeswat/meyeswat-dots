@@ -4,7 +4,7 @@
 * {
 /* `otf-font-awesome` is required to be installed for icons */
 font-family: JetBrainsMono Nerd Font Propo, FontAwesome;
-
+font-size: 14px;
 }
 window#waybar {
 background-color: @background;
@@ -14,7 +14,8 @@ border-color: transparent;
 border-style: solid;
 
 }
-#tooltip {
+
+tooltip {
 background-color: transparent;
 border: none;
 }
@@ -37,13 +38,13 @@ border-color: @foreground;
 border-style: double;
 border-radius: 25px;
 padding: 1px;
-margin: 5px;
+margin: 3px;
 }
 
 #clock {
 color: @color0;
 background-color: @foreground;
-font-size: 14px;
+font-size: 18px;
 font-weight: 500;
 font-stretch: ultra-condensed;
 letter-spacing: 0px;
@@ -53,7 +54,7 @@ border-color: @background;
 border-style: double;
 }
 #clock.date {
-font-size: 14px;
+font-size: 16px;
 font-weight: 400;
 font-variant: small-caps;
 letter-spacing: 0px;
@@ -64,18 +65,14 @@ background-color: @background;
 }
 
 #workspaces {
-    margin-top: 2px;
-    margin-bottom: 2px;
-    margin-left: 11px;
-    margin-right: 11px;
-    font-size: 10px;
-    border-radius: 1px;
+    margin: 7px;
+    border-radius: 15px;
     background-color: @color0;
 }
     #workspaces button { /* workspaces that have something in them*/
     all: unset;
-    margin: 1px;
-    padding: 3px;
+    margin: 2px;
+    padding: 1px;
     border-radius: 15px;
     background-color: @color8;
     color: @color14;
@@ -104,11 +101,8 @@ background-color: @background;
 #audio {
 color: @background;
 background-color: @color3;
-padding: 5px;
-margin-top: 2px;
-margin-left: 5px;
-margin-right: 5px;
-font-size: 12px;
+padding: 4px;
+margin: 3px;
 border-radius: 30px;
 border-width: 3px;
 border-color: @background;
@@ -133,17 +127,17 @@ border-style: double;
     #pulseaudio-slider {
     padding: 0;
     margin: 0;
-    min-height: 80px;
-    min-width: 10px;
     }
     #pulseaudio-slider slider {
-
+    min-height: 10px;
+    min-width: 10px;
     opacity: 0;
-    border: double;
+    background-image: none;
+    border: none;
     box-shadow: none;
     }
     #pulseaudio-slider trough {
-    min-height: 50px;
+    min-height: 100px;
     min-width: 10px;
     border-radius: 10px;
     background-color: @background;
@@ -151,17 +145,14 @@ border-style: double;
     #pulseaudio-slider highlight {
     min-width: 10px;
     border-radius: 5px;
-    background-color: @color11;
+    background-color: @color1;
     }
 
 #statistics{
 color: @background;
 background-color: @color2;
-padding: 5px;
-margin-top: 2px;
-margin-left: 5px;
-margin-right: 5px;
-font-size: 12px;
+padding: 4px;
+margin: 3px;
 border-radius: 30px;
 border-width: 3px;
 border-color: @background;
@@ -214,26 +205,24 @@ border-style: double;
     }
 
 #battery {
-color: @background;
-background-color: @color1;
-padding: 5px;
-margin-top: 2px;
-margin-left: 5px;
-margin-right: 5px;
-font-size: 14px;
-border-radius: 30px;
-border-width: 3px;
-border-color: @background;
-border-style: double;
+color: @color15;
+background-color:@toolbar-module-bg;
+border-radius: 15px;
 }
-
-#battery format-alt {
-    font-size:10px;
+#battery.charging, #battery.plugged {
+color: @color2;
+background-color: @color8;
+border-radius: 15px;
 }
-
+@keyframes blink {
+    to {
+        color: @color10;
+        background-color:@toolbar-module-bg;
+    }
+}
 #battery.critical:not(.charging) {
-background-color: @color1;
-color: @background;
+background-color: @toolbar-module-bg;
+color: @color15;
 animation-name: blink;
 animation-duration: 0.5s;
 animation-timing-function: steps(12);
@@ -244,11 +233,8 @@ animation-direction: alternate;
 #internet {
 color: @background;
 background-color: @color4;
-padding: 5px;
-margin-top: 2px;
-margin-left: 5px;
-margin-right: 5px;
-font-size: 12px;
+padding: 4px;
+margin: 3px;
 border-radius: 30px;
 border-width: 3px;
 border-color: @background;
@@ -284,11 +270,8 @@ border-style: double;
 #settings-menu {
 color: @background;
 background-color:@color5;
-padding: 5px;
-margin-top: 2px;
-margin-left: 5px;
-margin-right: 5px;
-font-size: 12px;
+padding: 4px;
+margin: 3px;
 border-radius: 30px;
 border-width: 3px;
 border-color: @background;
@@ -339,12 +322,8 @@ border-style: double;
 #power-options {
 color: @foreground;
 background-color:@background;
-margin-bottom: 5px;
-padding: 5px;
-margin-top: 2px;
-margin-left: 5px;
-margin-right: 5px;
-font-size: 12px;
+padding: 4px;
+margin: 3px;
 border-radius: 30px;
 border-width: 3px;
 border-color: @foreground;
