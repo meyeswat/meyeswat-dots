@@ -370,15 +370,6 @@ border-style: double;
     color: @background;
     background-color: @color14;
     }
-    #custom-reboot {
-    color: @foreground;
-    padding: 1px;
-    border-radius: 15px;
-    }
-    #custom-reboot:hover {
-    color: @background;
-    background-color: @foreground;
-    }
     #custom-sleep {
     color: @foreground;
     padding: 1px;
@@ -396,14 +387,5 @@ border-style: double;
     #custom-logout:hover {
     color: @background;
     background-color: @foreground;
+    }
 
-    }
-    #custom-shutdown {
-    color: @foreground;
-    padding: 1px;
-    border-radius: 15px;
-    }
-    #custom-shutdown:hover {
-    color: @background;
-    background-color: @foreground;
-    }
