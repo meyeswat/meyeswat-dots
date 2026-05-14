@@ -1,0 +1,25 @@
+background = "rgb(0f2123)"
+
+foreground = "rgb(c3c7c8)"
+background = "rgb(0f2123)"
+wallpaper = "rgb(run/media/zach/transfer/very good minecraft screenshots/2025-08-30_11.25.50.png)"
+
+color0 = "rgb(0f2123)"
+color1 = "rgb(393f4c)"
+color2 = "rgb(3e4f53)"
+color3 = "rgb(635851)"
+color4 = "rgb(3c4b6d)"
+color5 = "rgb(954083)"
+color6 = "rgb(506d72)"
+color7 = "rgb(929b9c)"
+color8 = "rgb(5e7074)"
+color9 = "rgb(4C5466)"
+color10 = "rgb(536A6F)"
+color11 = "rgb(85766C)"
+color12 = "rgb(506592)"
+color13 = "rgb(C756AF)"
+color14 = "rgb(6B9299)"
+color15 = "rgb(c3c7c8)"
+
+
+
