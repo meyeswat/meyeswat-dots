@@ -185,7 +185,7 @@
         "custom/wallpaper":{
             "format": "{icon}",
             "format-icons": "󰸉",
-            "on-click": "kitty -e ~/.config/waybar/scripts/wallpaper-directions.sh",
+            "on-click": "kitty -e ~/.config/waybar/scripts/wallpaper.sh",
             "tooltip": true,
             "tooltip-format": "Change wallpaper"
         },
