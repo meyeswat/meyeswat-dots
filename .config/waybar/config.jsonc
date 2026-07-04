@@ -85,13 +85,13 @@
         },
         "max-volume": 100,
         "tooltip": "true",
-        "tooltip-format": "Volume"
-        
+        "tooltip-format": "Volume",
+        "on-click": "pavucontrol"
         },
         "pulseaudio/slider": {
         "min": 0,
         "max": 100,
-    "orientation": "vertical"
+        "orientation": "vertical"
     },
     "group/statistics": {
     "orientation": "vertical",
@@ -133,7 +133,8 @@
         "tooltip-format-ethernet": "{bandwidthUpBits} | {bandwidthDownBits}: {ifname}",
         "tooltip-format-wifi": "{icon} {bandwidthUpBits} | {bandwidthDownBits}: {ifname}",
         "tooltip-format-disconnected": "Not connected to internet",
-        "format-disconnected": "⚠",
+        "format-disabled": "",
+        "format": "󱘖",
         "on-click": "kitty -e nmtui"
         },
         "custom/network-reset": {
@@ -185,16 +186,16 @@
         "custom/wallpaper":{
             "format": "{icon}",
             "format-icons": "󰸉",
-            "on-click": "kitty -e ~/.config/waybar/scripts/wallpaper.sh",
+            "on-click": "kitty -e ~/.config/waybar/scripts/wallpaper-directions.sh",
             "tooltip": true,
             "tooltip-format": "Change wallpaper"
         },
          "custom/theme":{
             "format": "{icon}",
             "format-icons": "",
-            "on-click": "kitty -e ~/.config/waybar/scripts/theme-directions.sh",
+            "on-click": "kitty -e ~/.config/waybar/scripts/wallpaper.sh",
             "tooltip": true,
-            "tooltip-format": "Change theme"
+            "tooltip-format": "Apply theme from wallpaper"
         },
         "custom/displays":{
             "format": "{icon}",
