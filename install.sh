@@ -1,7 +1,8 @@
-sudo pacman -Syu --asexplicit alsa-lib alsa-plugins archlinux-keyring bash archlinux-appstream-data archlinux-xdg-menu pacman bluez brightnessctl systemd curl default-cursors device-mapper ffmpeg freetype2 gparted hyprgraphics hypridle hyprcursor hyprpolkitagent hyprsunset hyprutils hyprwayland-scanner imagemagick wayland java-environment-common java-runtime-common kate libxrandr libxrender linux linux-firmware make nano mkinitcpio opus print-manager prismlauncher python qemu pipewire btop hyprlock calcurse fastfetch fish hyprland kate kitty nwg-displays rofi thunar vlc waybar tumbler networkmanager hyprpaper xorg-xhost xdg-desktop-portal xdg-desktop-portal-hyprland gvfs dbus glfw sway-nc linux-headers v4l2loopback-dkms ufw pulseaudio gdm gnome-calculator
+sudo pacman -Syu --asexplicit alsa-lib alsa-plugins archlinux-keyring bash archlinux-appstream-data archlinux-xdg-menu pacman bluez brightnessctl systemd curl default-cursors device-mapper ffmpeg freetype2 gparted hyprgraphics hypridle hyprcursor hyprpolkitagent hyprsunset hyprutils hyprwayland-scanner imagemagick wayland java-environment-common java-runtime-common kate libxrandr libxrender linux linux-firmware make nano mkinitcpio opus print-manager prismlauncher python qemu pipewire btop hyprlock calcurse fastfetch fish hyprland kate kitty nwg-displays rofi thunar vlc waybar tumbler networkmanager hyprpaper xorg-xhost xdg-desktop-portal xdg-desktop-portal-hyprland gvfs dbus glfw sway-nc linux-headers v4l2loopback-dkms ufw gdm gnome-calculator wireplumber pipewire-pulse
 
 xdg-mime default thunar.desktop inode/directory
 sudo systemctl enable --now gdm
+sudo systemctl --user pipewire pipewire-pulse wireplumber
 
 sudo pacman -S --needed base-devel git
 git clone https://aur.archlinux.org/yay.git
